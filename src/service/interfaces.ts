@@ -17,19 +17,19 @@ export interface IUser {
 		date: string;
 		age: number;
 	};
-    login: {
-        uuid: string;
-        md5: string;
-        password: string;
-        salt: string;
-        sha1: string;
-        sha256: string;
-        username: string;
-    }
+	login: {
+		uuid: string;
+		md5: string;
+		username: string;
+		password: string;
+		salt: string;
+		sha1: string;
+		sha256: string;
+	};
 	location: {
 		city: string;
 		country: string;
-        state: string;
+		state: string;
 		coordinates: {
 			latitude: string;
 			longitude: string;
@@ -46,7 +46,7 @@ export interface IUser {
 	};
 	id: {
 		name: string;
-		value: string | null
+		value: string | null;
 	};
 	name: {
 		title: string;
