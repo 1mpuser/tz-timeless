@@ -7,8 +7,11 @@ import {
 	IGenderStat,
 	IUser,
 	countStatistics,
+	getUserAddress,
+	getUserBirthday,
 } from './service/interfaces';
 import SearchInput from './components/SearchInput/SearchInput';
+import RefreshButton from './components/RefreshButton/RefreshButton';
 
 import { initialUsers } from './service/initialUsers';
 
@@ -17,6 +20,7 @@ function App() {
 	const [genderStat, setGenderStat] = useState<IGenderStat>();
 	const [ageStat, setAgeStat] = useState<IAgeStat>();
 	const [search, setSearch] = useState('');
+	const [refreshCounter, setRefreshCounter] = useState(0);
 
 	useEffect(() => {
 		const foo = async () => {
@@ -33,14 +37,24 @@ function App() {
 		};
 
 		foo();
-	}, []);
+	}, [refreshCounter]);
 
-	console.log({ users, ageStat, genderStat });
+	const searchUsers = users.filter((user) => {
+		const str = `${Object.values(user.name).join(' ')} ${user.email} ${
+			user.phone
+		} ${getUserAddress(user)} ${getUserBirthday(user)}`;
+		return str.includes(search);
+	});
 
 	return (
 		<>
-			<div className='flex justify-between w-screen m-[32px]'>
+			<div className='flex justify-between m-[32px] '>
 				<SearchInput search={search} setSearch={(str) => setSearch(str)} />
+				<RefreshButton
+					click={() => {
+						setRefreshCounter(refreshCounter + 1);
+					}}
+				/>
 			</div>
 		</>
 	);

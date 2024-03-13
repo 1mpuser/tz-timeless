@@ -1,3 +1,4 @@
+import moment from 'moment';
 export interface IUser {
 	gender: 'male' | 'female';
 	cell: string;
@@ -96,4 +97,12 @@ export const countStatistics = (users: IUser[]) => {
 		genderStat,
 		ageStat,
 	};
+};
+
+export const getUserAddress = (user: IUser) => {
+	return `${user.location.country}, ${user.location.state}, ${user.location.city}`;
+};
+
+export const getUserBirthday = (user: IUser) => {
+	return moment(user.dob.date).format('D MMMM YYYY');
 };

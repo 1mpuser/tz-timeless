@@ -1,0 +1,12 @@
+.refresh-button {
+	line-height: 20px;
+	color: #cf7b5a;
+	font-size: 14px;
+	display: grid;
+	align-items: center;
+	font-weight: 600;
+	cursor: pointer;
+	width: 132;
+	height: 40;
+	font-size: 14px;
+}

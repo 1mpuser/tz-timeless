@@ -1,7 +1,7 @@
 .input-search {
-	border-radius: 10px;
+	border-radius: 14px;
 	width: 332px;
 	height: 52px;
-	background-color: #1e2027;
+	background-color: rgb(30, 32, 38);
 	padding: 14px;
 }

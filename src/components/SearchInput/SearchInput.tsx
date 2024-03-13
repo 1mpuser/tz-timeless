@@ -1,11 +1,15 @@
 import React, { FC } from 'react';
 import classes from './SearchButton.module.css';
 
-interface ISearhInputProps {
+interface ISearchInputProps {
 	search: string;
 	setSearch: (str: string) => void;
 }
-const SearchInput: FC<ISearhInputProps> = ({ search, setSearch, ...props }) => {
+const SearchInput: FC<ISearchInputProps> = ({
+	search,
+	setSearch,
+	...props
+}) => {
 	return (
 		<input
 			value={search}
