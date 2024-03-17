@@ -12,6 +12,7 @@ import {
 } from './service/interfaces';
 import SearchInput from './components/SearchInput/SearchInput';
 import RefreshButton from './components/RefreshButton/RefreshButton';
+import StatComponent from './components/StatComponent/StatComponent';
 
 import { initialUsers } from './service/initialUsers';
 
@@ -47,8 +48,8 @@ function App() {
 	});
 
 	return (
-		<>
-			<div className='flex justify-between m-[32px] '>
+		<div className=' m-0 flex flex-col h-screen'>
+			<div className='flex justify-between m-[32px]'>
 				<SearchInput search={search} setSearch={(str) => setSearch(str)} />
 				<RefreshButton
 					click={() => {
@@ -56,7 +57,11 @@ function App() {
 					}}
 				/>
 			</div>
-		</>
+			<div className='flex flex-row' style={{ flex: 1 }}>
+				<div style={{ flex: 1, backgroundColor: 'bisque' }}></div>
+				<StatComponent />
+			</div>
+		</div>
 	);
 }
 
