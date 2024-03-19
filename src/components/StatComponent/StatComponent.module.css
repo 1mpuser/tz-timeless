@@ -6,13 +6,23 @@
 	margin-bottom: 40px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	/* align-items: center; */
 }
 .stat-big-label {
-	color: black;
-	text-align: center;
+	text-align: left;
 	margin: 10px;
 	position: relative;
+	color: #dcd8d3;
+	font-weight: 450;
+	font-size: 20px;
+}
+.stat-big-label-tmp {
+	text-align: left;
+	margin: 10px;
+	position: relative;
+	color: #dcd8d3;
+	font-weight: 450;
+	font-size: 20px;
 }
 
 .stat-big-label::before {
@@ -21,5 +31,24 @@
 	top: calc(100% + 10px);
 	left: 0;
 	right: 0;
-	border-top: 1px solid white;
+	border-top: 1px solid rgb(48, 50, 55);
+}
+
+.info {
+	display: flex;
+	width: 310px;
+}
+
+.key {
+	font-size: 12px;
+	line-height: 20px;
+	color: rgb(139, 137, 136);
+	width: 60px;
+}
+
+.value {
+	color: rgb(219, 216, 212);
+	font-size: 14px;
+	line-height: 20px;
+	width: 250px;
 }

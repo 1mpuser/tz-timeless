@@ -13,8 +13,7 @@ import {
 import SearchInput from './components/SearchInput/SearchInput';
 import RefreshButton from './components/RefreshButton/RefreshButton';
 import StatComponent from './components/StatComponent/StatComponent';
-
-import { initialUsers } from './service/initialUsers';
+import Card from './components/Card/Card';
 
 function App() {
 	const [users, setUsers] = useState<IUser[]>([]);
@@ -25,9 +24,8 @@ function App() {
 
 	useEffect(() => {
 		const foo = async () => {
-			// const data = await axios.get('https://randomuser.me/api/?results=500');
-			// const users = data.data.results as IUser[];
-			const users = initialUsers;
+			const data = await axios.get('https://randomuser.me/api/?results=500');
+			const users = data.data.results as IUser[];
 
 			setUsers(users);
 
@@ -48,7 +46,7 @@ function App() {
 	});
 
 	return (
-		<div className=' m-0 flex flex-col h-screen'>
+		<div className='m-0 flex flex-col h-screen'>
 			<div className='flex justify-between m-[32px]'>
 				<SearchInput search={search} setSearch={(str) => setSearch(str)} />
 				<RefreshButton
@@ -57,9 +55,28 @@ function App() {
 					}}
 				/>
 			</div>
-			<div className='flex flex-row' style={{ flex: 1 }}>
-				<div style={{ flex: 1, backgroundColor: 'bisque' }}></div>
-				<StatComponent />
+			<div className='flex' style={{ height: 'calc(100% - 120px)' }}>
+				<div
+					style={{
+						flex: 1,
+						display: 'flex',
+						paddingLeft: 10,
+						flexWrap: 'wrap',
+						overflowY: 'scroll',
+					}}
+				>
+					{searchUsers.map((user) => (
+						<Card
+							user={user}
+							onDelete={(user) => {
+								setUsers(
+									users.filter((us) => us.login.uuid !== user.login.uuid)
+								);
+							}}
+						/>
+					))}
+				</div>
+				<StatComponent ageStat={ageStat} genderStat={genderStat} />
 			</div>
 		</div>
 	);

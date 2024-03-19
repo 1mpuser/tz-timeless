@@ -1,0 +1,102 @@
+.card {
+	width: 332px;
+	height: 242px;
+	border-radius: 10px;
+	background-color: rgb(30, 32, 38);
+	/* display: flex; */
+	/* flex-direction: column; */
+	justify-content: space-between;
+	padding: 20px;
+	margin: 0 10px 20px 10px;
+	position: relative;
+	align-items: left;
+}
+
+.top {
+	display: flex;
+	align-items: center;
+}
+
+.image {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	/* background-image: url('https://randomuser.me/api/portraits/thumb/women/17.jpg'); */
+	background-size: cover;
+	background-position: center;
+	margin-right: 10px;
+}
+
+.text {
+	color: white;
+}
+
+.bottom {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 20px;
+}
+
+.delete-icon {
+	cursor: pointer;
+	font-size: 24px; /* Размер иконки */
+	width: 30px; /* Ширина иконки */
+	height: 30px; /* Высота иконки */
+	justify-content: center; /* Центрируем по горизонтали */
+	align-items: center; /* Центрируем по вертикали */
+	color: rgb(194, 60, 71);
+	margin: 5px;
+}
+
+.card:hover {
+	border: 1px solid #cf7b5a; /* Цвет границ при наведении */
+}
+
+.card:hover .head-text {
+	color: #cf7b5a;
+}
+
+.card:hover .delete-icon-wrapper {
+	display: flex; /* Показываем иконку при наведении на карточку */
+}
+
+.delete-icon-wrapper {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	display: none;
+	border: 1px solid rgb(194, 60, 71);
+	border-top: 0;
+	border-right: 0;
+	border-radius: 0 0 0 10px;
+	cursor: pointer;
+}
+.head-text {
+	font-size: 20px;
+	line-height: 24px;
+}
+
+.email {
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.key {
+	font-size: 12px;
+	line-height: 20px;
+	color: rgb(139, 137, 136);
+	width: 60px;
+}
+
+.value {
+	color: rgb(219, 216, 212);
+	font-size: 14px;
+	line-height: 20px;
+	width: 250px;
+}
+
+.bottom-info {
+	display: flex;
+	width: 310px;
+}
