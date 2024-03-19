@@ -1,10 +1,6 @@
 import React from 'react';
 import classes from './Card.module.css';
-import {
-	IUser,
-	getUserAddress,
-	getUserBirthday,
-} from '../../service/interfaces';
+import { IUser, getUserAddress, getUserBirthday } from '../../service/service';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 interface ICardProps {

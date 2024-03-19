@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import React from 'react';
 import classes from './StatComponent.module.css';
-import { IAgeStat, IGenderStat } from '../../service/interfaces';
+import { IAgeStat, IGenderStat } from '../../service/service';
 
 interface IStat {
 	ageStat?: IAgeStat;
@@ -19,8 +19,7 @@ const StatComponent: React.FC<IStat> = ({ ageStat, genderStat }) => {
 						? Object.entries(ageStat).map(([key, value]) => {
 								const arr = key.split('to');
 
-								const keyString =
-									arr.length > 1 ? arr[0] + ' to ' + arr[1] : arr[0];
+								const keyString = arr.length > 1 ? arr.join(' to ') : arr[0];
 
 								return (
 									<div className={classes.info}>

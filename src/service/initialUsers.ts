@@ -1,4 +1,4 @@
-import { IUser } from './interfaces';
+import { IUser } from './service';
 
 // Cause there is delay to get data from the server
 export const initialUsers: IUser[] = [

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import axios from 'axios';
 import {
 	IAgeStat,
@@ -9,7 +8,7 @@ import {
 	countStatistics,
 	getUserAddress,
 	getUserBirthday,
-} from './service/interfaces';
+} from './service/service';
 import SearchInput from './components/SearchInput/SearchInput';
 import RefreshButton from './components/RefreshButton/RefreshButton';
 import StatComponent from './components/StatComponent/StatComponent';
