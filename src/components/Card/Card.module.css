@@ -3,8 +3,6 @@
 	height: 242px;
 	border-radius: 10px;
 	background-color: rgb(30, 32, 38);
-	/* display: flex; */
-	/* flex-direction: column; */
 	justify-content: space-between;
 	padding: 20px;
 	margin: 0 10px 20px 10px;
@@ -21,7 +19,6 @@
 	width: 56px;
 	height: 56px;
 	border-radius: 50%;
-	/* background-image: url('https://randomuser.me/api/portraits/thumb/women/17.jpg'); */
 	background-size: cover;
 	background-position: center;
 	margin-right: 10px;
@@ -40,17 +37,17 @@
 
 .delete-icon {
 	cursor: pointer;
-	font-size: 24px; /* Размер иконки */
-	width: 30px; /* Ширина иконки */
-	height: 30px; /* Высота иконки */
-	justify-content: center; /* Центрируем по горизонтали */
-	align-items: center; /* Центрируем по вертикали */
+	font-size: 24px;
+	width: 30px;
+	height: 30px;
+	justify-content: center;
+	align-items: center;
 	color: rgb(194, 60, 71);
 	margin: 5px;
 }
 
 .card:hover {
-	border: 1px solid #cf7b5a; /* Цвет границ при наведении */
+	border: 1px solid #cf7b5a;
 }
 
 .card:hover .head-text {
@@ -58,7 +55,7 @@
 }
 
 .card:hover .delete-icon-wrapper {
-	display: flex; /* Показываем иконку при наведении на карточку */
+	display: flex;
 }
 
 .delete-icon-wrapper {
